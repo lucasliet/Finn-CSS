@@ -15,18 +15,10 @@ window.addEventListener('load', () => {
     blink(eye){
       if (eye.classList.contains('closed-eye')) return;
       
-      this.openOrCloseEye(eye);
+      this.closeOrOpenEye(eye);
   
-      let isEyeOpen = false;
-      let openEyes = setInterval(() => {
-  
-        if (isEyeOpen) {
-          clearInterval(openEyes);
-        } else {
-          this.openOrCloseEye(eye);
-          isEyeOpen = true;
-        }
-  
+      setTimeout(() => {
+          this.closeOrOpenEye(eye);
       }, 600)
   
     },
@@ -34,7 +26,7 @@ window.addEventListener('load', () => {
      * Invert eye's state (Open or Close)
      * @param {Element} eye the HtmlElement that represents finn's eye
      */
-    openOrCloseEye: eye => {
+    closeOrOpenEye: eye => {
       eye.classList.toggle('eye');
       eye.classList.toggle('closed-eye');
     }
