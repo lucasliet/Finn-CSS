@@ -1,0 +1,133 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /*Fix bug in chrome mobile */
+}
+
+.face {
+  width: 450px;
+  height: 320px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background: #f8ddce;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  box-shadow: inset 10px -5px 5px #ddc2b0;
+}
+
+.eye {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #000;
+  border: 3px solid #000;
+  margin-top: 70px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.eye:after {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff; 
+  position: absolute;
+  top: -24px;
+  left: -10px;
+  content: "";
+  animation: shake .1s infinite ease-in-out alternate;
+}
+
+.eye:before {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff; 
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+  content: "";
+  animation: shake .1s infinite ease-in-out alternate;
+}
+
+@keyframes shake {
+    0%   {transform: translateX(-1px)}
+    100% {transform: translateX(1px)}
+}
+
+.mouth {
+  width: 180px;
+  height: 40px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #000;
+  position: absolute;
+  bottom: 60px;
+  left: 135px;
+  overflow: hidden;
+}
+
+.tooth {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+}
+
+.t-left {
+  top: -10px;
+  left: 30px;
+}
+
+.t-center {
+  top: -15px;
+  left: 75px;
+}
+
+.t-right {
+  top: -10px;
+  right: 30px;
+}
+
+.tongue {
+  width: 60px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ea6e74;
+  position: absolute;
+  bottom: 50px;
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+}
+
+.cheek {
+  width: 30px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f8ddce;
+  position: absolute;
+  bottom: 50px;
+}
+.c-left {
+  border-right: 2px solid #000;
+  left: 125px;
+  transform: rotate(10deg);
+  box-shadow: inset -5px 1px 2px #ddc2b0;
+}
+
+.c-right {
+  border-left: 2px solid #000;
+  right: 125px;
+  transform: rotate(-10deg);
+  box-shadow: inset 5px 1px 2px #ddc2b0;
+}
