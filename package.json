@@ -1,0 +1,15 @@
+{
+  "name": "finn-css",
+  "description": "Finn from adventure time made in css",
+  "version": "1.0.0",
+  "main": "electron-start.js",
+  "repository": "https://github.com/lucasliet/Finn-CSS",
+  "author": "Lucas S Oliveira <lsoliveira@magnasistemas.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^12.0.1"
+  }
+}
