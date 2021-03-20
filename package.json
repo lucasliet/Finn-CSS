@@ -1,50 +1,35 @@
 {
   "name": "finn-css",
-  "description": "Finn from adventure time made in css",
-  "version": "1.0.0",
+  "description": "Finn from adventure time drawed entirely in css",
+  "version": "1.1.0",
+  "author": "Lucas Souza <lucasouliveira@gmail.com>",
   "main": "electron-start.js",
   "repository": "https://github.com/lucasliet/Finn-CSS",
-  "author": "Lucas S Oliveira <lsoliveira@magnasistemas.com.br>",
   "license": "MIT",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.54",
-    "@electron-forge/maker-deb": "^6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-    "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "electron": "^12.0.1"
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5"
   },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "Finn-CSS"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": ["darwin"]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
+  "build": {
+    "appId": "dev.lucasliet.finn-css",
+    "productName": "Finn CSS",
+    "mac": {
+      "target": "zip",
+      "category": "public.app-category.utilities",
+      "icon": "assets/AppIcon.icns"
+    }, 
+    "win": {
+      "target": "portable",
+      "icon": "assets/AppIcon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility",
+      "icon": "assets/AppIcon.png"
     }
   }
 }
